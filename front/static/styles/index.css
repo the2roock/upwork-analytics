@@ -1,0 +1,68 @@
+body{
+  background: aliceblue;
+}
+
+.table_div table, td{
+    border: 1px solid #333;
+    margin-left: auto;
+    margin-right: auto;
+}
+.table_div thead, tfoot{
+    background-color: #333;
+    color: #fff;
+}
+
+h2{
+  text-align: center;
+}
+
+.table_filter div{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.table_content{
+  overflow-y: scroll;
+}
+.table_content button{
+  margin-left: 30px;
+}
+
+.roundedOne{
+  display: inline-block;
+}
+.roundedOne input{
+    display: none;
+}
+.roundedOne input + label{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #555;
+    text-align: center;
+    background: green;
+    border-radius: 50px;
+    font-size: 20px;
+}
+.roundedOne input + label:before{
+    content: '+';
+    color: white;
+    font-weight: bold;
+}
+.roundedOne input:checked + label{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #555;
+    text-align: center;
+    background: red;
+    border-radius: 50px;
+    font-size: 20px;
+}
+.roundedOne input:checked + label:before{
+    content: '-';
+    color: white;
+    font-weight: bold;
+}

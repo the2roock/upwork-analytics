@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/index.css') }}">
+    <script src="{{ url_for('static',filename='js/script.js') }}"></script>
+    <title>All Skills</title>
+  </head>
+  <body>
+    <div class="container">
+        <div id='table_div' class="table_div">
+          <h2>All skills</h2>
+          <div class="table_filter">
+            <div class="table_show_elements_count">
+              <span>Show </span>
+              <select id="show_elements_count" class="show_elements_count" onchange="change_table()">
+                <option value="10">10</option>
+                <option selected value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+              </select>
+              <span> elements</span>
+            </div>
+            <div class="table_search_elements">
+              Search
+              <input id="searched_word" type="text" onchange="change_table()">
+            </div>
+            <div class="get_advancedinfo_button">
+              <button type="button" name="button" onclick="get_advancedinfo()">Get info about selected skills</button>
+            </div>
+          </div>
+          <div class="table_content">
+
+          </div>
+          <div id="table_pages">
+
+          </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+      var data = JSON.parse('{{ data | tojson | safe }}');
+      create_table(data, 25, '');
+      set_global_data(data);
+    </script>
+  </body>
+</html>
