@@ -22,7 +22,6 @@ def get_data_about_all_skills():
 
 
 def get_advanced_skillinfo(skills_name_str):
-    print(type(skills_name_str))
     searched_skills_slug = [element.replace('-', '_') for element in skills_name_str.split(',')]
     with connect_to_db() as connection:
         with connection.cursor() as cursor:

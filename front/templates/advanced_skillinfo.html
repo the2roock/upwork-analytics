@@ -29,7 +29,7 @@
               <input id="searched_word" type="text" onchange="change_table()">
             </div>
             <div class="get_advancedinfo_button">
-              <button type="button" name="button" onclick="get_advancedinfo()">Get info about selected skills</button>
+              <button type="button" name="button" onclick="get_advancedinfo_from_advanced_page()">Get info about selected skills</button>
             </div>
           </div>
           <div class="table_content">
@@ -43,7 +43,7 @@
     <script type="text/javascript">
       var data = JSON.parse('{{ data | tojson | safe }}');
       create_table(data['result'], 25, '');
-      set_global_data(data['result']);
+      set_global_data_from_advanced_page(data);
       document.getElementsByTagName('title')[0].innerHTML = data['searched_skills'][0]['name'];
       for (var i = 1; i < data['searched_skills'].length; i++) {
         document.getElementsByTagName('title')[0].innerHTML += ', ' + data['searched_skills'][i]['name'];

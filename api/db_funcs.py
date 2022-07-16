@@ -1,9 +1,5 @@
 import pymysql
-
-database = 'UpWork'
-password = '1234678901_pP'
-host = 'localhost'
-user = 'root'
+from config import Config
 
 def connect_to_db():
-    return pymysql.connect(user=user, host=host, database=database, password=password)
+    return pymysql.connect(user=Config.user, host=Config.host, database=Config.database, password=Config.password)

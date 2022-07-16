@@ -21,5 +21,9 @@ api.add_resource(AdvancedSkillInfo, '/api/advanced-skillinfo')
 api.init_app(app)
 
 
-if __name__ == '__main__':
+def main():
     app.run(debug=True)
+
+
+if __name__ == '__main__':
+    main()
